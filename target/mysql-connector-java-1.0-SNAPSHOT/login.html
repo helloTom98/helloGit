@@ -1,0 +1,58 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>系统登录 - 超市账单管理系统</title>
+<link type="text/css" rel="stylesheet" href="css/style.css" />
+<script src="js/jquery-1.8.3.min.js"></script>
+</head>
+<body class="blue-style">
+<div id="login">
+	<div class="icon"></div>
+	<div class="login-box">
+		<form action="/user/login"  name="actionForm" id="actionForm"  method="post" >
+			<dl>
+				<dt>用户名：</dt>
+				<dd><input type="text" name="username" class="input-text" /> <span id="loginNameSpan"></span></dd>
+				<dt>密　码：</dt>
+				<dd><input type="password" name="password"  class="input-text" /><span id="passwordSpan"></span></dd>
+			</dl>
+			<div class="buttons">
+<!--				<input type="button"   value="登录系统" id= "shouye_login" class="input-button"  />-->
+				<input type="submit" class="input-button" id="shouye_login" value="登录"/>
+				<input type="reset"  value="重　　填" class="input-button" />
+			</div>
+		</form>
+	</div>
+</div>
+
+<!--<script>
+
+
+
+		//为登陆按钮添加点击事件
+		$("#shouye_login").click(function(){
+
+				//向服务发送ajax请求提效手机号密码
+				$.ajax({
+					//处理请求的Servlet的地址,
+					url:"/user/login",
+					data:$("#actionForm").serialize(),//解决手动输入的麻烦
+					dataType:"json",		//将服务器返回的数据当作json来进行处理
+					type:"post",   //请求方式是get还是post请求
+					success:function(data){    //data就是服务器响应回来的数据 {"flag":true,"message":"登陆成功"}  {"flag":false,"message":"登陆失败"}
+						//alert("弹框");//为什么该语句不会立即执行而是等登陆成功后才会执行
+						if(data.flag == true){
+							//登录成功进入到购物系统的首页
+							window.location.href="frame.html"
+						}else{
+							//登录失败之后跳转注册界面
+							alert("登录失败")
+							//window.location.href="/member_register.html";
+						}
+					}
+				})
+
+		})
+</script>-->
+</body>
+</html>
