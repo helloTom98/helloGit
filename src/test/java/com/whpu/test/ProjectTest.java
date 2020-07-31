@@ -17,7 +17,7 @@ public class ProjectTest {
 
     @Test
     public void testJdbc(){
-        User user = userService.login("张三","333333");
+        User user = userService.login("1","2");
         System.out.println(user);
     }
     
